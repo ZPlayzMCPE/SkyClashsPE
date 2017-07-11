@@ -1,6 +1,6 @@
 <?php
 
-namespace PocketMiner\SkyWars;
+namespace PocketMiner\SkyClashsPE;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\PluginTask;
@@ -32,7 +32,7 @@ use pocketmine\level\sound\PopSound;
 use pocketmine\level\sound\ExplodeSound;
 use pocketmine\block\Air;
 
-class SkyWars extends PluginBase implements Listener {
+class SkyClashs extends PluginBase implements Listener {
 
     public $prefix = TE::GRAY . "" . TE::GOLD . TE::BOLD . "Sky" . TE::GREEN . "Clash" . TE::RESET . TE::GRAY . "";
 	public $mode = 0;

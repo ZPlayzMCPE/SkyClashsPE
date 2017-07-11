@@ -9,7 +9,7 @@ commands:
         usage: /sc <crea>
         description: SkyClashs-Commands
     sclang:
-        usage: /lang <en>
+        usage: /sclang <en>
         description: SkyClashs-English-Lang
     scstart:
         usage: /scstarta

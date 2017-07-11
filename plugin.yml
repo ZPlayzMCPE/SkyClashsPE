@@ -5,12 +5,12 @@ version: 0.0.1
 api: [1.0.0, 2.0.0, 3.0.0-ALPHA6, 3.0.1]
 
 commands:
-    sw:
+    sc:
         usage: /sc <crea>
         description: SkyClashs-Commands
-    swlang:
+    sclang:
         usage: /lang <en>
         description: SkyClashs-English-Lang
-    swstart:
+    scstart:
         usage: /scstarta
         description: SkyClashs-Force start

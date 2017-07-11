@@ -357,12 +357,12 @@ class SkyClashsPE extends PluginBase implements Listener {
 							}
 							else
 							{
-								$player->sendMessage("Error.");
+								$player->sendMessage("Error. Incorrect usages. Usage: /sc crea <arena name>");
 							}
 						}
 						else
 						{
-							$player->sendMessage("Comando invalid. Do /sc for a list of commands.");
+							$player->sendMessage("Command invalid. Do /sc for a list of commands.");
 						}
 					}
 					else
@@ -417,18 +417,18 @@ class SkyClashsPE extends PluginBase implements Listener {
 		{
 			if($this->mode==26 && $this->op==$player->getName())
 			{
-				$tile->setText(TE::AQUA . "§aUnisciti",TE::YELLOW  . "0 / 12","§f" . $this->currentLevel,$this->prefix);
+				$tile->setText(TE::AQUA . "§aJoin",TE::YELLOW  . "0 / 12","§f" . $this->currentLevel,$this->prefix);
 				$this->refreshArenas();
 				$this->currentLevel = "";
 				$this->mode = 0;
-				$player->sendMessage("Arena Registered.");
+				$player->sendMessage("Sign succesfully Registered.");
 			}
 			else
 			{
 				$text = $tile->getText();
 				if($text[3] == $this->prefix)
 				{
-					if($text[0]==TE::AQUA . "§aEntra")
+					if($text[0]==TE::AQUA . "§aCome in")
 					{
 						$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
                                                 $slots = new Config($this->getDataFolder() . "/slots.yml", Config::YAML);
@@ -548,7 +548,7 @@ class SkyClashsPE extends PluginBase implements Listener {
 			$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
 			$config->set($this->currentLevel . "Spawn" . $this->mode, array($block->getX(),$block->getY()+1,$block->getZ()));
 			$player->sendMessage($this->prefix . "Spawn " . $this->mode . " Mode succesfully added!");
-                        $config->set($this->currentLevel . "inizio", 0);
+                        $config->set($this->currentLevel . "Beginning", 0);
 			$config->set("arenas",$this->arenas);
 			$player->sendMessage("You are playing skyclash");
 			$spawn = $this->getServer()->getDefaultLevel()->getSafeSpawn();
@@ -622,7 +622,7 @@ class RefreshSigns extends PluginTask {
 					}
 					elseif($aop>=12)
 					{
-						$ingame = TE::GOLD . "Full";
+						$ingame = TE::GOLD . "Game currently Full";
 					}
 					$t->setText($ingame,TE::YELLOW  . $aop . " / 12",$text[2],$this->prefix);
 				}

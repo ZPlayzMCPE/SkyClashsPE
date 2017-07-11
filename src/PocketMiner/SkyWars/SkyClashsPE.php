@@ -32,7 +32,7 @@ use pocketmine\level\sound\PopSound;
 use pocketmine\level\sound\ExplodeSound;
 use pocketmine\block\Air;
 
-class SkyClashs extends PluginBase implements Listener {
+class SkyClashsPE extends PluginBase implements Listener {
 
     public $prefix = TE::GRAY . "" . TE::GOLD . TE::BOLD . "Sky" . TE::GREEN . "Clash" . TE::RESET . TE::GRAY . "";
 	public $mode = 0;

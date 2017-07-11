@@ -1,8 +1,8 @@
 name: SkyClashsPE
-main: PocketMiner\SkyClashs\SkyClashs
+main: PocketMiner\SkyWars\SkyClashsPE
 author: PocketMiner
-version: 0.0.1 Miner
-api: [1.0.0, 2.0.0]
+version: 0.0.1
+api: [1.0.0, 2.0.0, 3.0.0-ALPHA6, 3.0.1]
 
 commands:
     sw:

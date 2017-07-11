@@ -1,0 +1,16 @@
+name: SkyWars
+main: PocketMiner\SkyWars\SkyWars
+author: PocketMiner
+version: 0.0.1 Miner
+api: [1.0.0, 2.0.0]
+
+commands:
+    sw:
+        usage: /sc <crea>
+        description: SkyWars-Commands
+    swlang:
+        usage: /lang <en>
+        description: SkyWars-English-Lang
+    swstart:
+        usage: /scstarta
+        description: SkyWars-Force start

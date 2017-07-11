@@ -1,6 +1,6 @@
 <?php
 
-namespace PocketMiner\SkyClashsPE;
+namespace PocketMiner\SkyWars;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\PluginTask;

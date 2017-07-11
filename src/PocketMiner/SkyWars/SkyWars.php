@@ -108,7 +108,7 @@ class SkyWars extends PluginBase implements Listener {
                 foreach($jugador->getLevel()->getPlayers() as $pl){
                                 $muerto = $jugador->getNameTag();
                                 $asesino = $asassin->getNameTag();
-				$pl->sendMessage(TE::RED . $muerto . TE::YELLOW . " assassinato da " . TE::GREEN . $asesino . TE::YELLOW.  ".");
+				$pl->sendMessage(TE::RED . $muerto . TE::YELLOW . " Murder of " . TE::GREEN . $Murder . TE::YELLOW.  ".");
 			}
                 }
                 }
@@ -344,7 +344,7 @@ class SkyWars extends PluginBase implements Listener {
                                                                         $this->op = $player->getName();
 									$this->currentLevel = $args[1];
 									$this->mode = 1;
-									$player->sendMessage("Tocca i punti per gli spawn");
+									$player->sendMessage("Arena created. Now set spawns to where you want the arena to be.");
 									$player->setGamemode(1);
 									$player->teleport($this->getServer()->getLevelByName($args[1])->getSafeSpawn(),0,0);
                                                                         $name = $args[1];
@@ -352,25 +352,25 @@ class SkyWars extends PluginBase implements Listener {
 								}
 								else
 								{
-									$player->sendMessage("Errore, mondo sconosciuto");
+									$player->sendMessage("Error, world missing.");
 								}
 							}
 							else
 							{
-								$player->sendMessage("Errore nel comando");
+								$player->sendMessage("Error.");
 							}
 						}
 						else
 						{
-							$player->sendMessage("Comando invalido");
+							$player->sendMessage("Comando invalid. Do /sc for a list of commands.");
 						}
 					}
 					else
 					{
-					 $player->sendMessage("§aComandi SkyCLash");
-                                         $player->sendMessage("§d/sc crea [mondo]: Crea un arena SkyClash");
+					 $player->sendMessage("§aComand SkyCLash");
+                                         $player->sendMessage("§d/sc crea [arena name]: Crea un arena SkyClash");
                                          $player->sendMessage("§d/ranksc [rank] [giocatore]: ranks in beta");
-                                         $player->sendMessage("§d/sctarta: inizia la partita");
+                                         $player->sendMessage("§d/sctarta: Force starts the game.");
 					}
 				}
 				else
@@ -388,7 +388,7 @@ class SkyWars extends PluginBase implements Listener {
                                         {
                                         $config->set($args[0] . "StartTime", 10);
                                         $config->save();
-                                        $player->sendMessage($this->prefix . "§aIniziando in 10...");
+                                        $player->sendMessage($this->prefix . "Game starting in 10...");
                                         }
                                         }
                                         else
@@ -399,7 +399,7 @@ class SkyWars extends PluginBase implements Listener {
                                             {
                                             $config->set($level . "StartTime", 10);
                                             $config->save();
-                                            $player->sendMessage($this->prefix . "§aIniziando in 10...");
+                                            $player->sendMessage($this->prefix . "§aGame starting in 10...");
                                             }
                                         }
                                 }
@@ -421,7 +421,7 @@ class SkyWars extends PluginBase implements Listener {
 				$this->refreshArenas();
 				$this->currentLevel = "";
 				$this->mode = 0;
-				$player->sendMessage("Arena Registrata");
+				$player->sendMessage("Arena Registered.");
 			}
 			else
 			{
@@ -508,13 +508,13 @@ class SkyWars extends PluginBase implements Listener {
                                                 }
                                                 else
                                                 {
-                                                    $player->sendMessage($this->prefix."Non ci sono Slots");
+                                                    $player->sendMessage($this->prefix."Now, all the spawns have been set. Now go to spawn and click the sign.");
                                                     goto sinslots;
                                                 }
-                                                $player->sendMessage("               §eEntra in §6Sky§cClash");
+                                                $player->sendMessage("               §eEnter in §6Sky§cClash");
                                                 foreach($level->getPlayers() as $playersinarena)
                                                 {
-                                                $playersinarena->sendMessage($player->getNameTag() .TE::AQUA."§a> §e è entrato in partita");
+                                                $playersinarena->sendMessage($player->getNameTag() .TE::AQUA."§a> §eYou have joined this arena.");
                                                 }
 						$spawn = new Position($thespawn[0]+0.5,$thespawn[1],$thespawn[2]+0.5,$level);
 						$level->loadChunk($spawn->getFloorX(), $spawn->getFloorZ());
@@ -530,7 +530,7 @@ class SkyWars extends PluginBase implements Listener {
 					}
 					else
 					{
-                                            $player->sendMessage($this->prefix .TE::RED."Non puoi entrare");
+                                            $player->sendMessage($this->prefix .TE::RED."Error. Slots have not been set up yet.");
 					}
 				}
 			}
@@ -539,7 +539,7 @@ class SkyWars extends PluginBase implements Listener {
 		{
 			$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
 			$config->set($this->currentLevel . "Spawn" . $this->mode, array($block->getX(),$block->getY()+1,$block->getZ()));
-			$player->sendMessage($this->prefix . "Spawn " . $this->mode . " è stato registrato!");
+			$player->sendMessage($this->prefix . "Spawn " . $this->mode . " Stats have been registered!");
 			$this->mode++;
 			$config->save();
 		}
@@ -547,10 +547,10 @@ class SkyWars extends PluginBase implements Listener {
 		{
 			$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
 			$config->set($this->currentLevel . "Spawn" . $this->mode, array($block->getX(),$block->getY()+1,$block->getZ()));
-			$player->sendMessage($this->prefix . "Spawn " . $this->mode . " hè stato registrato!");
+			$player->sendMessage($this->prefix . "Spawn " . $this->mode . " Mode succesfully added!");
                         $config->set($this->currentLevel . "inizio", 0);
 			$config->set("arenas",$this->arenas);
-			$player->sendMessage("Tocca un cartello per registrare la mappa skyclash");
+			$player->sendMessage("You are playing skyclash");
 			$spawn = $this->getServer()->getDefaultLevel()->getSafeSpawn();
 			$this->getServer()->getDefaultLevel()->loadChunk($spawn->getFloorX(), $spawn->getFloorZ());
 			$player->teleport($spawn,0,0);
@@ -618,11 +618,11 @@ class RefreshSigns extends PluginTask {
 					$config = new Config($this->plugin->getDataFolder() . "/config.yml", Config::YAML);
 					if($config->get($namemap . "PlayTime")!=780)
 					{
-						$ingame = TE::DARK_PURPLE . "In gioco";
+						$ingame = TE::DARK_PURPLE . "In game";
 					}
 					elseif($aop>=12)
 					{
-						$ingame = TE::GOLD . "Pieno";
+						$ingame = TE::GOLD . "Full";
 					}
 					$t->setText($ingame,TE::YELLOW  . $aop . " / 12",$text[2],$this->prefix);
 				}
@@ -666,17 +666,17 @@ class GameSender extends PluginTask {
 					{
                                             if(count($playersArena)>=2)
                                             {
-                                                $config->set($arena . "inizio", 1);
+                                                $config->set($arena . "beginning", 1);
                                                 $config->save();
                                             }
-                                            if($config->get($arena . "inizio")==1)
+                                            if($config->get($arena . "beginning")==1)
                                             {
 							if($timeToStart>0)
 							{
 								$timeToStart--;
 								foreach($playersArena as $pl)
 								{
-									$pl->sendPopup(TE::GREEN . $timeToStart . " secondi per incominciare" .TE::RESET);
+									$pl->sendPopup(TE::GREEN . $timeToStart . " Seconds to get started." .TE::RESET);
                                                                         if($timeToStart<=5)
                                                                         {
                                                                         $levelArena->addSound(new PopSound($pl));
@@ -713,7 +713,7 @@ class GameSender extends PluginTask {
                                                                 {
                                                                     foreach($playersArena as $pl)
                                                                         {
-                                                                        $pl->sendPopup(TE::GOLD.$jog." ".TE::AQUA."Giocatori restanti".TE::RESET);
+                                                                        $pl->sendPopup(TE::GOLD.$jog." ".TE::AQUA."Players remaining".TE::RESET);
                                                                         }
                                                                 }
                                                                 if($jog==1)
@@ -755,9 +755,9 @@ class GameSender extends PluginTask {
 									foreach($playersArena as $pl)
 									{
                                                                             $pl->sendMessage("§e>--------------SkyClash-----------------");
-                                                                            $pl->sendMessage("§e>§cSkyClash by GeoZDev!");
-                                                                            $pl->sendMessage("§e>§fStai giocando su: §b" . $arena);
-                                                                            $pl->sendMessage("§e>§bHai §a30 §bsecondi di invincibilità");
+                                                                            $pl->sendMessage("§e>§cSkyClash by GeoZDev, English code by Zeao.");
+                                                                            $pl->sendMessage("§e>§fYou are playing in §b" . $arena);
+                                                                            $pl->sendMessage("§e>§bGame starts in §a30 §bseconds of invicibiltiie.");
                                                                             $pl->sendMessage("§e>--------------SkyClash-----------------");
                                                                             $levelArena->addSound(new PopSound($pl));
 									}
@@ -766,7 +766,7 @@ class GameSender extends PluginTask {
 								{
 									foreach($playersArena as $pl)
 									{
-                                                                            $pl->sendMessage("§e>§bRimangono §a15 §bsecondi di invincibilità");
+                                                                            $pl->sendMessage("§e>§bYou have §a15 §bseconds of incibilitie.");
                                                                             $levelArena->addSound(new PopSound($pl));
 									}
 								}
@@ -774,7 +774,7 @@ class GameSender extends PluginTask {
 								{
 									foreach($playersArena as $pl)
 									{
-                                                                            $pl->sendMessage("§e>§bNon sei più invincibile");
+                                                                            $pl->sendMessage("§e>§bYou are no longer invincibile");
                                                                             $levelArena->addSound(new ExplodeSound($pl));
 									}
 								}
@@ -782,14 +782,14 @@ class GameSender extends PluginTask {
 								{
 									foreach($playersArena as $pl)
 									{
-                                                                                $pl->sendMessage("§e>§bGrazie per aver giocato!");
+                                                                                $pl->sendMessage("§e>§bThank you for playing!");
 									}                                                     $levelArena->AddSound(new ExplodeSound($pl));
 								}
                                                                 if($time == 480)
 								{
 									foreach($playersArena as $pl)
 									{
-                                                                                $pl->sendMessage("§b>§aLe ceste sono state riempite!");
+                                                                                $pl->sendMessage("§b>§aThe Baskets have been filled!");
                                                                                 $levelArena->addSound(new PopSound($pl));
 									}
 									$this->refillChests($levelArena);
@@ -807,19 +807,19 @@ class GameSender extends PluginTask {
 									{
 										foreach($playersArena as $pl)
 										{
-											$pl->sendMessage($this->prefix .TE::YELLOW. $minutes . " " .TE::GREEN. "minuti restanti");
+											$pl->sendMessage($this->prefix .TE::YELLOW. $minutes . " " .TE::GREEN. "Remaining minutes");
 										}
 									}
 									elseif($time == 30 || $time == 15 || $time == 10 || $time ==5 || $time ==4 || $time ==3 || $time ==2 || $time ==1)
 									{
 										foreach($playersArena as $pl)
 										{
-											$pl->sendMessage($this->prefix .TE::YELLOW. $time . " " .TE::GREEN. "secondi restanti");
+											$pl->sendMessage($this->prefix .TE::YELLOW. $time . " " .TE::GREEN. "seconds remaining");
 										}
 									}
 									if($time <= 0)
 									{
-                                                                            $this->plugin->getServer()->broadcastMessage($this->prefix .TE::GREEN."Nessun vincitore in ".TE::AQUA.$arena);
+                                                                            $this->plugin->getServer()->broadcastMessage($this->prefix .TE::GREEN."No winner in ".TE::AQUA.$arena);
                                                                             foreach($playersArena as $pl)
                                                                             {
                                                                                     $pl->teleport($this->plugin->getServer()->getDefaultLevel()->getSafeSpawn(),0,0);
@@ -831,7 +831,7 @@ class GameSender extends PluginTask {
                                                                                     $this->plugin->kit->clearall($pl);
                                                                                     $this->getResetmap()->reload($levelArena);
                                                                             }
-                                                                            $config->set($arena . "inicio", 0);
+                                                                            $config->set($arena . "start", 0);
                                                                             $time = 780;
 									}
 								}
@@ -842,7 +842,7 @@ class GameSender extends PluginTask {
 						{
                                                     foreach($playersArena as $pl)
                                                     {
-                                                            $pl->sendPopup(TE::DARK_AQUA ."Servono altri giocatori".TE::RESET);
+                                                            $pl->sendPopup(TE::DARK_AQUA ."Other players are needed.".TE::RESET);
                                                     }
                                                     $config->set($arena . "PlayTime", 780);
                                                     $config->set($arena . "StartTime", 30);

@@ -54,3 +54,38 @@ It's not fully released yet. Get it on the github page, how to install is above.
 You can add a review in the issues tab. We'd love to hear some feedback from you all.
 
 
+
+## SkyClashsPE BETA Change logs
+Hey guys. These are the BETA change logs we have for you:
+
+
+
+## SkyClashsPE V0.0.1-BETA01
+
+* First release.
+* Added code.
+* Fixed commands in plugin.yml.
+
+
+
+## SkyClashsPE V0.0.1-BETA02
+
+* Fixed a bug where you wouldn't be able to start the game, and would come up with errors.
+* Transalated plugin to English.
+* Fixed a bug where the commands would be incorrect when doing /sc help.
+* Added /lang.
+
+
+## SkyClashsPE V0.0.1-BETA03
+
+* Fixed the $murder not being available and would cause some issues in the coding.
+* Renamed command to /sclang
+* Added /sclang to the /sc help page.
+* Fixed the signs glitch, where it wouldn't save upon startup.
+* Renamed command to /scstart, instead of /scstarta, which didn't make sense, lol.
+* Fixed errors with messages which incorrectly said errors.
+* Updated plugin version to 0.0.1-BETA03.
+* Bumped the plugin to: 3.0.0-ALPHA7, and 3.0.2.
+* Added Zeao as the author.
+* Added the correct coding style. :P
+

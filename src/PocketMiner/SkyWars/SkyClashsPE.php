@@ -370,7 +370,8 @@ class SkyClashsPE extends PluginBase implements Listener {
 					 $player->sendMessage("§aComand SkyCLash");
                                          $player->sendMessage("§d/sc crea [arena name]: Crea un arena SkyClash");
                                          $player->sendMessage("§d/ranksc [rank] [giocatore]: ranks in beta");
-                                         $player->sendMessage("§d/sctarta: Force starts the game.");
+                                         $player->sendMessage("§d/sctart: Force starts the game.");
+					 $player->sendmessage("§d/sclang: Changes the plugin language.");
 					}
 				}
 				else
@@ -378,7 +379,7 @@ class SkyClashsPE extends PluginBase implements Listener {
 				}
 			return true;
                         
-                        case "scstarta":
+                        case "scstart":
                             if($player->isOp())
 				{
                                 if(!empty($args[0]))
@@ -388,7 +389,7 @@ class SkyClashsPE extends PluginBase implements Listener {
                                         {
                                         $config->set($args[0] . "StartTime", 10);
                                         $config->save();
-                                        $player->sendMessage($this->prefix . "Game starting in 10...");
+                                        $player->sendMessage($this->prefix . "Game starting in 10 seconds...");
                                         }
                                         }
                                         else
@@ -399,7 +400,7 @@ class SkyClashsPE extends PluginBase implements Listener {
                                             {
                                             $config->set($level . "StartTime", 10);
                                             $config->save();
-                                            $player->sendMessage($this->prefix . "§aGame starting in 10...");
+                                            $player->sendMessage($this->prefix . "§aGame starting in 10 seconds...");
                                             }
                                         }
                                 }
@@ -614,7 +615,7 @@ class RefreshSigns extends PluginTask {
 					$aop = 0;
                                         $namemap = str_replace("§f", "", $text[2]);
 					foreach($allplayers as $player){if($player->getLevel()->getFolderName()==$namemap){$aop=$aop+1;}}
-					$ingame = TE::AQUA . "§aUnisciti";
+					$ingame = TE::AQUA . "§aJoin";
 					$config = new Config($this->plugin->getDataFolder() . "/config.yml", Config::YAML);
 					if($config->get($namemap . "PlayTime")!=780)
 					{
@@ -766,7 +767,7 @@ class GameSender extends PluginTask {
 								{
 									foreach($playersArena as $pl)
 									{
-                                                                            $pl->sendMessage("§e>§bYou have §a15 §bseconds of incibilitie.");
+                                                                            $pl->sendMessage("§e>§bYou have §a15 §bseconds of invincibilitie.");
                                                                             $levelArena->addSound(new PopSound($pl));
 									}
 								}

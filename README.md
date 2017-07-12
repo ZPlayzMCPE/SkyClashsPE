@@ -27,7 +27,7 @@ This is currently in the BETA stages, so don't expect a release from this just y
 
 ## How to install the BETA versions of this plugin?
 
-* What you need to do, is download a zip file. By clicking the github download page, where you can download files from this page (Updated shortly.)
+* What you need to do, is download a zip file. By clicking "Clone and Download"
 
 * Once downloaded, add it to this wesbite: http://pmt.mcpe.fun
 

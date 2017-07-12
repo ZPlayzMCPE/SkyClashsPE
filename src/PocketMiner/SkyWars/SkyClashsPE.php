@@ -108,7 +108,7 @@ class SkyClashsPE extends PluginBase implements Listener {
                 foreach($jugador->getLevel()->getPlayers() as $pl){
                                 $muerto = $jugador->getNameTag();
                                 $asesino = $asassin->getNameTag();
-				$pl->sendMessage(TE::RED . $muerto . TE::YELLOW . " Murder of " . TE::GREEN . $Murder . TE::YELLOW.  ".");
+				$pl->sendMessage(TE::RED . $muerto . TE::YELLOW . " Murder of " . TE::GREEN . $asesino . TE::YELLOW.  ".");
 			}
                 }
                 }

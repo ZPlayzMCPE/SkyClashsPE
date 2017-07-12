@@ -35,7 +35,7 @@ This is currently in the BETA stages, so don't expect a release from this just y
 
 * Once done, you should be all ready to go. If any errors come up as a result of the process, please open an issue and we will get back to you shortly.
 
-Remember, what we update on this github page will be automatically available for download as a zip file, so if things do go wrong, please do not moan about it. We will fix it soon. Just simply open an issue, and we shall get back to you ASAP. Thje reason why things may go wrong as an automatic download, is because we may be still editing some stuff, saved some stuff maybe which aren't complete, and may somehow ruin the plugin. So if you still want the BETA, then go a head. But if you want to wait for the full release, then do so. Your choice, but I'm not responsible for your actions, whether you download the BETA version of the plugin or not. Just a little heads up.
+Remember, what we update on this github page will be automatically available for download as a zip file, so if things do go wrong, please do not moan about it. We will fix it soon. Just simply open an issue, and we shall get back to you ASAP. The reason why things may go wrong as an automatic download, is because we may be still editing some stuff, saved some stuff maybe which aren't complete, and may somehow ruin the plugin. So if you still want the BETA, then go a head. But if you want to wait for the full release, then do so. Your choice, but I'm not responsible for your actions, whether you download the BETA version of the plugin or not. Just a little heads up.
 
 
 ## Can I fork this plugin?

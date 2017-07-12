@@ -539,7 +539,7 @@ class SkyClashsPE extends PluginBase implements Listener {
 		{
 			$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
 			$config->set($this->currentLevel . "Spawn" . $this->mode, array($block->getX(),$block->getY()+1,$block->getZ()));
-			$player->sendMessage($this->prefix . "Spawn " . $this->mode . " Stats have been registered!");
+			$player->sendMessage($this->prefix . "Spawn " . $this->mode . " Spawns have been registered!");
 			$this->mode++;
 			$config->save();
 		}
@@ -550,7 +550,7 @@ class SkyClashsPE extends PluginBase implements Listener {
 			$player->sendMessage($this->prefix . "Spawn " . $this->mode . " Mode succesfully added!");
                         $config->set($this->currentLevel . "Beginning", 0);
 			$config->set("arenas",$this->arenas);
-			$player->sendMessage("You are playing skyclash");
+			$player->sendMessage("You are playing skyclash on Void Mini-Games.");
 			$spawn = $this->getServer()->getDefaultLevel()->getSafeSpawn();
 			$this->getServer()->getDefaultLevel()->loadChunk($spawn->getFloorX(), $spawn->getFloorZ());
 			$player->teleport($spawn,0,0);

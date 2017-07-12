@@ -13,5 +13,5 @@ commands:
         usage: /sclang <en>
         description: SkyClashs-English-Lang
     scstart:
-        usage: /scstarta
+        usage: /scstart
         description: SkyClashs-Force start

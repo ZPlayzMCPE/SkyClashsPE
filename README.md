@@ -89,3 +89,9 @@ Hey guys. These are the BETA change logs we have for you:
 * Added Zeao as the author.
 * Added the correct coding style. :P
 
+
+## Don't see the download link for the BETA versions of this plugin?
+Then click this download link to install our BETA versions. :)
+https://github.com/ZPlayzMCPE/SkyClashsPE/archive/master.zip
+
+Don't worry. I will not update the link unless needed. It will automatically update along with BETA versions, so no need to ask me to update it, when it does it automatically.

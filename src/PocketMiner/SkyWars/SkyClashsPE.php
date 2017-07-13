@@ -824,7 +824,7 @@ class GameSender extends PluginTask {
                                                                             foreach($playersArena as $pl)
                                                                             {
                                                                                     $pl->teleport($this->plugin->getServer()->getDefaultLevel()->getSafeSpawn(),0,0);
-                                                                                    $pl->getInventory()->clearAll();
+                                                                                    $pl->getInventory()->clearAll() on null;
                                                                                     $pl->removeAllEffects();
                                                                                     $pl->setFood(20);
                                                                                     $pl->setHealth(20);
